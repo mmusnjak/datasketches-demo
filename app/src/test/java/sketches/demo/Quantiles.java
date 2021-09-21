@@ -21,7 +21,7 @@ public class Quantiles {
 
     IntStream.range(51_000_000, 100_000_000).forEach(sketch1::update);
     var secondRank = sketch1.getRank(50_000_000.0f) * 100;
-    assertEquals(50.0, secondRank, 0.6);
+    assertEquals(50.0, secondRank, 0.8);
     System.out.println(
         "Rank: " + secondRank + ", serializedSize: " + sketch1.getSerializedSizeBytes());
 
@@ -38,6 +38,6 @@ public class Quantiles {
         "Rank: " + fourthRank + ", serializedSize: " + sketch1.getSerializedSizeBytes());
 
     var median = sketch1.getQuantile(0.5);
-    assertEquals(67_000_000.0, median, 250_000.0);
+    assertEquals(67_000_000.0, median, 300_000.0);
   }
 }

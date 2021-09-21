@@ -24,8 +24,6 @@ fun showThetaDetails(sketch: Sketch, expected: Int) {
     val err = if (expected == 0) 0.0 else 100.0 * diff / expected
     val compactSize = sketch.compactBytes
     val updatableSize = sketch.currentBytes
-    val lowerBound = sketch.getLowerBound(1).toLong()
-    val upperBound = sketch.getUpperBound(1).toLong()
     print("estimate: ${sketch.estimate.toInt()}, true value: $expected\n")
     print("difference: $diff, pct: $err\n")
     print("updatable size: $updatableSize, compact size: $compactSize\n")
