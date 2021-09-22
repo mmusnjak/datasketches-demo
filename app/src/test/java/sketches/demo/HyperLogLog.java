@@ -38,7 +38,6 @@ public class HyperLogLog {
   }
 
   @Test
-  @Disabled
   @DisplayName("Count to 300M and compare a small and large sketch")
   void extremeCount() {
     var small = new HllSketch(10);

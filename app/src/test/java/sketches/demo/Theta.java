@@ -32,7 +32,6 @@ public class Theta {
   }
 
   @Test
-  @Disabled
   @DisplayName("Count to 300M and compare a small and large sketch")
   void extremeCount() {
     var small = UpdateSketch.builder().setNominalEntries(2048).build();
